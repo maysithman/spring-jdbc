@@ -1,0 +1,4 @@
+﻿CREATE TABLE ride(
+id Serial PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+duration INT NOT NULL);
