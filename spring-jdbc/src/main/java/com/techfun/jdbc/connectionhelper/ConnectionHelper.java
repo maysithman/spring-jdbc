@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConnectionHelper {
 
 	private static final String DB_DRIVER = "org.postgresql.Driver";
-	private static final String DB_CONNECTION = "jdbc:postgresql://localhost:5432/JDBC_Test";
+	private static final String DB_CONNECTION = "jdbc:postgresql://localhost:5432/Ride";
 	private static final String DB_USER = "postgres";
 	private static final String DB_PASSWORD = "admin";
 	
