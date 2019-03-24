@@ -7,9 +7,11 @@ import com.techfun.jdbc.service.RideServiceImpl;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		testCreateRide();
+		testUpdateRide();
+		testSelectRide();
+		testDeleteRide();
 	}
 	
 	private static void testCreateRide() {
@@ -21,6 +23,36 @@ public class Main {
 		rideService.createRide(ride);
 		
 		System.out.println("Successfully Insert.");
+	}
+	
+	private static void testUpdateRide() {
+		Ride ride = new Ride();
+		ride.setName("Jin Jin");
+		ride.setDuration(20);
+		ride.setId(5);
+		
+		RideService rideService = new RideServiceImpl();
+		rideService.updateRide(ride);
+		
+		System.out.println("Successfully Update.");
+	}
+	
+	private static void testSelectRide() {
+		Ride ride = new Ride();
+		
+		RideService rideService = new RideServiceImpl();
+		rideService.selectRide(ride);
+		
+		System.out.println("Successfully Update.");
+	}
+	
+	private static void testDeleteRide() {
+		Ride ride = new Ride();
+		
+		RideService rideService = new RideServiceImpl();
+		rideService.deleteRide(ride);
+		
+		System.out.println("Successfully Delete.");
 	}
 
 }
