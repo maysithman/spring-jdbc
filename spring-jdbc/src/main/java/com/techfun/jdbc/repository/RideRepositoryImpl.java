@@ -5,9 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.springframework.stereotype.Repository;
+
 import com.techfun.jdbc.connectionhelper.ConnectionHelper;
 import com.techfun.jdbc.model.Ride;
 
+@Repository("rideRepository")
 public class RideRepositoryImpl implements RideRepository {
 	
 	public void createRide(Ride ride) {	
