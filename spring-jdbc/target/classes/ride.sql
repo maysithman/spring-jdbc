@@ -1,4 +1,5 @@
-﻿CREATE TABLE ride(
+﻿CREATE TABLE employee(
 id Serial PRIMARY KEY,
 name VARCHAR(100) NOT NULL,
-duration INT NOT NULL);
+age INT NOT NULL,
+address VARCHAR(200) NOT NULL);
