@@ -1,10 +1,13 @@
 package com.techfun.jdbc.repository;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.techfun.jdbc.model.Employee;
+import com.techfun.jdbc.repository.util.EmployeeRowMapper;
 
 @Repository("employeeRepository")
 public class EmployeeRepositoryImpl implements EmployeeRepository {
@@ -25,9 +28,11 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 	}
 
 	@Override
-	public void selectEmployee(Employee employee) {
-		String selectTableSQL = "SELECT * FROM Employee WHERE id=?";
-		
+	public List<Employee> selectEmployee(Employee employee) {
+		String selectTableSQL = "SELECT * FROM Employee";
+		List<Employee> employees = jdbcTemplate.query(selectTableSQL, new EmployeeRowMapper());
+
+		return employees;
 	}
 
 	@Override

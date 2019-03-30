@@ -1,5 +1,7 @@
 package com.techfun.jdbc.application;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -45,9 +47,14 @@ public class Main2 {
 
 	private static void testSelectEmployee(EmployeeService employeeService) {
 		Employee employee = new Employee();
-		employee.setId(2);
-
-		employeeService.selectEmployee(employee);
+		
+		List<Employee> employees = employeeService.selectEmployee(employee);
+		
+		for (Employee emp : employees) {
+		    System.out.println("ID" + emp.getId() + " " + "Name" + emp.getName() 
+		    	+ " " + "Age" + emp.getAge() + " " + "Address" 
+		    	+ emp.getAddress() + "\n");
+		}
 
 		System.out.println("Selected Employee Successfully.");
 	}

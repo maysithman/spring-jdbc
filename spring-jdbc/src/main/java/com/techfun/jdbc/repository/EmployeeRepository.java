@@ -1,5 +1,7 @@
 package com.techfun.jdbc.repository;
 
+import java.util.List;
+
 import com.techfun.jdbc.model.Employee;
 
 public interface EmployeeRepository {
@@ -8,7 +10,7 @@ public interface EmployeeRepository {
 	
 	void updateEmployee(Employee employee);
 	
-	void selectEmployee(Employee employee);
+	List<Employee> selectEmployee(Employee employee);
 	
 	void deleteEmployee(Employee employee);
 	
