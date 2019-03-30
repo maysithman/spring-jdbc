@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.techfun.jdbc.model.Employee;
+import com.techfun.jdbc.model.Ride;
 import com.techfun.jdbc.service.EmployeeService;
 import com.techfun.jdbc.service.RideService;
 
@@ -20,6 +21,23 @@ public class Main2 {
 		//testUpdateEmployee(employeeService);
 		testSelectEmployee(employeeService);
 		//testDeleteEmployee(employeeService);
+		
+		testInsertEmployeeAndRide(employeeService);
+	}
+
+	private static void testInsertEmployeeAndRide(EmployeeService employeeService) {
+		Employee employee = new Employee();
+		employee.setName("kk");
+		employee.setAge(23);
+		employee.setAddress("Yangon");
+		
+		Ride ride = new Ride();
+		ride.setName("Myo Myo");
+		ride.setDuration(10);
+		
+		employeeService.insertEmployeeAndRide(employee, ride);
+		
+		System.out.println("Inserted Employee and Ride Successfully.");
 	}
 
 	private static void testCreateEmployee(EmployeeService employeeService) {
@@ -51,9 +69,12 @@ public class Main2 {
 		List<Employee> employees = employeeService.selectEmployee(employee);
 		
 		for (Employee emp : employees) {
-		    System.out.println("ID" + emp.getId() + " " + "Name" + emp.getName() 
-		    	+ " " + "Age" + emp.getAge() + " " + "Address" 
-		    	+ emp.getAddress() + "\n");
+		    System.out.println(
+		    		"ID : " + emp.getId() + " 	" + 
+		    		"Name : " + emp.getName() + " 	" + 
+		    		"Age : " + emp.getAge() + " 	" + 
+		    		"Address : " + emp.getAddress() + "\n"
+		    		);
 		}
 
 		System.out.println("Selected Employee Successfully.");

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.techfun.jdbc.model.Employee;
+import com.techfun.jdbc.model.Ride;
 import com.techfun.jdbc.repository.EmployeeRepository;
 
 @Service("employeeService")
@@ -32,6 +33,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public void deleteEmployee(Employee employee) {
 		employeeRepository.deleteEmployee(employee);
+	}
+	
+	public void insertEmployeeAndRide(Employee employee, Ride ride) {
+		employeeRepository.insertEmployeeAndRide(employee, ride);
 	}
 
 }

@@ -16,15 +16,15 @@ public class Main {
 		ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 		RideService rideService = appContext.getBean("rideService", RideService.class);
 		
-		//testCreateRide(rideService);
+		testCreateRide(rideService);
 		//testUpdateRide(rideService);
-		testSelectRide(rideService);
+		//testSelectRide(rideService);
 		//testDeleteRide(rideService);
 	}
 	
 	private static void testCreateRide(RideService rideService) {
 		Ride ride = new Ride();
-		ride.setName("Zin Phyu");
+		ride.setName("Ma Ma");
 		ride.setDuration(10);
 		
 		//RideService rideService = new RideServiceImpl();

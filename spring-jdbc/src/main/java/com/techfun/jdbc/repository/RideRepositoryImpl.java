@@ -18,6 +18,8 @@ public class RideRepositoryImpl implements RideRepository {
 	public void createRide(Ride ride) {	
 		String insertTableSQL = "INSERT INTO Ride(NAME, DURATION) VALUES(?, ?)";
 		jdbcTemplate.update(insertTableSQL, ride.getName(), ride.getDuration());
+		
+		System.out.println("Test Transaction.");
 	}
 	
 	public void updateRide(Ride ride) {
