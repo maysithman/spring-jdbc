@@ -1,10 +1,13 @@
 package com.techfun.jdbc.repository;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.techfun.jdbc.model.Ride;
+import com.techfun.jdbc.repository.util.RideRowMapper;
 
 @Repository("rideRepository")
 public class RideRepositoryImpl implements RideRepository {
@@ -22,9 +25,11 @@ public class RideRepositoryImpl implements RideRepository {
 		jdbcTemplate.update(updateTableSQL, ride.getName(), ride.getDuration(), ride.getId());
 	}
 	
-	public void selectRide(Ride ride) {
+	public List<Ride> selectRide(Ride ride) {
 		String selectTableSQL = "SELECT * FROM Ride";
+		List<Ride> rides = jdbcTemplate.query(selectTableSQL, new RideRowMapper());
 		
+		return rides;
 	}
 	
 	public void deleteRide(Ride ride) {

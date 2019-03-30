@@ -1,5 +1,7 @@
 package com.techfun.jdbc.application;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -16,8 +18,8 @@ public class Main {
 		
 		//testCreateRide(rideService);
 		//testUpdateRide(rideService);
-		//testSelectRide(rideService);
-		testDeleteRide(rideService);
+		testSelectRide(rideService);
+		//testDeleteRide(rideService);
 	}
 	
 	private static void testCreateRide(RideService rideService) {
@@ -37,7 +39,6 @@ public class Main {
 		ride.setDuration(20);
 		ride.setId(11);
 		
-		//RideService rideService = new RideServiceImpl();
 		rideService.updateRide(ride);
 		
 		System.out.println("Successfully Update.");
@@ -46,8 +47,15 @@ public class Main {
 	private static void testSelectRide(RideService rideService) {
 		Ride ride = new Ride();
 		
-		//RideService rideService = new RideServiceImpl();
-		rideService.selectRide(ride);
+		List<Ride> rides = rideService.selectRide(ride);
+		
+		for(Ride r : rides) {
+			System.out.println(
+					"ID : " + r.getId() + "		" +
+					"Name : " + r.getName() + " 	" +
+					"Duration : " + r.getDuration() + "\n"
+					);
+		}
 		
 		System.out.println("Successfully Update.");
 	}
