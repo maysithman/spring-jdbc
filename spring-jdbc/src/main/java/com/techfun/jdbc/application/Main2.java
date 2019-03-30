@@ -16,8 +16,8 @@ public class Main2 {
 
 		//testCreateEmployee(employeeService);
 		//testUpdateEmployee(employeeService);
-		//testSelectEmployee(employeeService);
-		testDeleteEmployee(employeeService);
+		testSelectEmployee(employeeService);
+		//testDeleteEmployee(employeeService);
 	}
 
 	private static void testCreateEmployee(EmployeeService employeeService) {
@@ -45,10 +45,11 @@ public class Main2 {
 
 	private static void testSelectEmployee(EmployeeService employeeService) {
 		Employee employee = new Employee();
+		employee.setId(2);
 
 		employeeService.selectEmployee(employee);
 
-		System.out.println("Successfully Update.");
+		System.out.println("Selected Employee Successfully.");
 	}
 
 	private static void testDeleteEmployee(EmployeeService employeeService) {

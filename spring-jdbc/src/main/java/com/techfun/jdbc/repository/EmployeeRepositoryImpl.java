@@ -26,7 +26,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
 	@Override
 	public void selectEmployee(Employee employee) {
-		// TODO Auto-generated method stub
+		String selectTableSQL = "SELECT * FROM Employee WHERE id=?";
 		
 	}
 

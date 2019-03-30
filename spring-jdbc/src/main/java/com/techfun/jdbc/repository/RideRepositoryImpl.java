@@ -23,7 +23,7 @@ public class RideRepositoryImpl implements RideRepository {
 	}
 	
 	public void selectRide(Ride ride) {
-		String updateTableSQL = "SELECT * FROM Ride";
+		String selectTableSQL = "SELECT * FROM Ride";
 		
 	}
 	
