@@ -39,4 +39,18 @@ public class RideRepositoryImpl implements RideRepository {
 		jdbcTemplate.update(deleteTableSQL, ride.getId());
 	}
 
+	@Override
+	public Ride selectExactRide(Ride ride) {
+		String selectExactRide = "SELECT * FROM Ride WHERE id=?";
+		Ride r = jdbcTemplate.queryForObject(selectExactRide, new RideRowMapper(), ride.getId());
+		return r;
+	}
+
+	@Override
+	public int numOfRide(Ride ride) {
+		String countRide = "SELECT COUNT(*) FROM Ride";
+		int rideNums = jdbcTemplate.queryForObject(countRide, Integer.class);
+		return rideNums;
+	}
+
 }

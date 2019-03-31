@@ -29,5 +29,15 @@ public class RideServiceImpl implements RideService {
 	public void deleteRide(Ride ride) {
 		rideRepository.deleteRide(ride);
 	}
+
+	@Override
+	public Ride selectExactRide(Ride ride) {
+		return rideRepository.selectExactRide(ride);
+	}
+
+	@Override
+	public int numOfRide(Ride ride) {
+		return rideRepository.numOfRide(ride);
+	}
 	
 }
