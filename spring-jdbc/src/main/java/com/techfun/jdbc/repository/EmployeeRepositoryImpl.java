@@ -53,4 +53,19 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 		jdbcTemplate.update(insertRideSQL, ride.getName(), ride.getDuration());
 	}
 
+	@Override
+	public int numOfEmployee(Employee employee) {
+		String countEmployee = "SELECT COUNT(*) FROM Employee";
+		int numofEmployees = jdbcTemplate.queryForObject(countEmployee, Integer.class);
+		return numofEmployees;
+	}
+
+	@Override
+	public Employee selectExactEmployee(Employee employee) {
+		String selectTableSQL = "SELECT * FROM Employee WHERE id=?";
+		Employee emp = (Employee) jdbcTemplate.queryForObject(selectTableSQL, new EmployeeRowMapper(), employee.getId());
+
+		return emp;
+	}
+
 }

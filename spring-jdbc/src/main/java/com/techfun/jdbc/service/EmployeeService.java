@@ -17,4 +17,8 @@ public interface EmployeeService {
 	
 	void insertEmployeeAndRide(Employee employee, Ride ride);
 	
+	int numOfEmployee(Employee employee);
+	
+	Employee selectExactEmployee(Employee employee);
+	
 }

@@ -10,7 +10,7 @@ import com.techfun.jdbc.model.Ride;
 import com.techfun.jdbc.service.EmployeeService;
 import com.techfun.jdbc.service.RideService;
 
-public class Main2 {
+public class AppEmployee {
 
 	public static void main(String[] args) {
 
@@ -19,10 +19,33 @@ public class Main2 {
 
 		//testCreateEmployee(employeeService);
 		//testUpdateEmployee(employeeService);
-		testSelectEmployee(employeeService);
+		//testSelectEmployee(employeeService);
 		//testDeleteEmployee(employeeService);
 		
-		testInsertEmployeeAndRide(employeeService);
+		//testInsertEmployeeAndRide(employeeService);
+		testNumOfEmployee(employeeService);
+		testSelectExactEmployee(employeeService);
+	}
+
+	private static void testSelectExactEmployee(EmployeeService employeeService) {
+		Employee employee = new Employee();
+		employee.setId(2);
+		
+		Employee emp = employeeService.selectExactEmployee(employee);
+		
+		System.out.println(
+		    		"ID : " + emp.getId() + " 	" + 
+		    		"Name : " + emp.getName() + " 	" + 
+		    		"Age : " + emp.getAge() + " 	" + 
+		    		"Address : " + emp.getAddress() + "\n"
+		    		);
+
+		System.out.println("Selected Exact Employee Successfully.");
+	}
+
+	private static void testNumOfEmployee(EmployeeService employeeService) {
+		Employee employee = new Employee();
+		System.out.println("The number of employees : " + employeeService.numOfEmployee(employee));
 	}
 
 	private static void testInsertEmployeeAndRide(EmployeeService employeeService) {

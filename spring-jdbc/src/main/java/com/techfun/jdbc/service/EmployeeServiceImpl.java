@@ -39,4 +39,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employeeRepository.insertEmployeeAndRide(employee, ride);
 	}
 
+	@Override
+	public int numOfEmployee(Employee employee) {
+		return employeeRepository.numOfEmployee(employee);
+	}
+
+	@Override
+	public Employee selectExactEmployee(Employee employee) {
+		return employeeRepository.selectExactEmployee(employee);
+	}
+
 }
