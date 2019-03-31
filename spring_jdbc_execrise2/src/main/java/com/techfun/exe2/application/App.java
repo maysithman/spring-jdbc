@@ -1,4 +1,4 @@
-package com.techfun.spring_jdbc_execrise2;
+package com.techfun.exe2.application;
 
 /**
  * Hello world!
