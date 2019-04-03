@@ -18,4 +18,9 @@ public class StaffServiceImpl implements StaffService {
 		staffRepository.createStaff(staff, role);
 	}
 
+	@Override
+	public Staff updateStaffName(Staff staff) {
+		return staffRepository.updateStaffName(staff);
+	}
+
 }

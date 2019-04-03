@@ -6,5 +6,9 @@ import com.techfun.exe2.model.Staff;
 public interface StaffRepository {
 	
 	void createStaff(Staff staff, Role role);
+	
+	Staff selectExactStaff(Staff staff);
+	
+	Staff updateStaffName(Staff staff);
 
 }

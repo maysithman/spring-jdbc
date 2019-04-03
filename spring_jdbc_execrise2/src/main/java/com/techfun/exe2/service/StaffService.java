@@ -7,4 +7,6 @@ public interface StaffService {
 
 	void createStaff(Staff staff, Role role);
 	
+	Staff updateStaffName(Staff staff);
+	
 }
