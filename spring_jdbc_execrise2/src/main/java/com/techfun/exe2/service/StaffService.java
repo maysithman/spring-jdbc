@@ -9,4 +9,6 @@ public interface StaffService {
 	
 	Staff updateStaffName(Staff staff);
 	
+	void deleteStaff(Staff staff);
+	
 }

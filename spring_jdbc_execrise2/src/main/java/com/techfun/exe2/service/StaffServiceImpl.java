@@ -23,4 +23,9 @@ public class StaffServiceImpl implements StaffService {
 		return staffRepository.updateStaffName(staff);
 	}
 
+	@Override
+	public void deleteStaff(Staff staff) {
+		staffRepository.deleteStaff(staff);
+	}
+
 }

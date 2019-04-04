@@ -63,4 +63,9 @@ public class StaffRepositoryImpl implements StaffRepository {
 		return jdbcTemplate.queryForObject("SELECT * FROM Staff WHERE staff_id=?", new StaffRowMapper(), staff.getStaff_id());
 	}
 
+	@Override
+	public void deleteStaff(Staff staff) {
+		jdbcTemplate.update("DELETE FROM Staff WHERE Staff_id=?", staff.getStaff_id());
+	}
+
 }

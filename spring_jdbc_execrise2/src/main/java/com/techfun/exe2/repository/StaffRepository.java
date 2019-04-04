@@ -10,5 +10,7 @@ public interface StaffRepository {
 	Staff selectExactStaff(Staff staff);
 	
 	Staff updateStaffName(Staff staff);
+	
+	void deleteStaff(Staff staff);
 
 }

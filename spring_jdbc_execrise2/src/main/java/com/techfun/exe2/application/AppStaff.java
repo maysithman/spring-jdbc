@@ -16,13 +16,22 @@ public class AppStaff
 		StaffService staffService = appContext.getBean("staffService", StaffService.class);
 		
         //testCreateStaff(staffService);
-		testUpdateStaffName(staffService);
+		//testUpdateStaffName(staffService);
+		testDeleteStaff(staffService);
     }
+
+	private static void testDeleteStaff(StaffService staffService) {
+		Staff staff = new Staff();
+		staff.setStaff_id(9);
+		
+		staffService.deleteStaff(staff);
+		System.out.println("Deleted Staff Successfully.");
+	}
 
 	private static void testUpdateStaffName(StaffService staffService) {
 		Staff staff = new Staff();
-		staff.setStaff_name("Laye Htaw");
-		staff.setStaff_id(4);
+		staff.setStaff_name("Su Ei San");
+		staff.setStaff_id(6);
 		
 		Staff s = staffService.updateStaffName(staff);
 		
@@ -37,13 +46,14 @@ public class AppStaff
 
 	private static void testCreateStaff(StaffService staffService) {
 		Staff staff = new Staff();
-		staff.setStaff_name("Yin Yin Cho");
+		staff.setStaff_name("Laye Htaw");
 		staff.setAge(23);
-		staff.setPosition("Java Developer");
+		staff.setPosition("C# (.Net) Developer");
 		
 		Role role = new Role();
 		role.setRole_name("Junior");
 		
 		staffService.createStaff(staff, role);
+		System.out.println("Insert New Staff Successfully.");
 	}
 }
