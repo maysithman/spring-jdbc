@@ -68,4 +68,16 @@ public class StaffRepositoryImpl implements StaffRepository {
 		jdbcTemplate.update("DELETE FROM Staff WHERE Staff_id=?", staff.getStaff_id());
 	}
 
+	@Transactional
+	@Override
+	public void createDuplicateErrorStaffId(Staff staff, Role role) {
+		
+		String insertStaff = "INSERT INTO Staff(staff_id, staff_name, age, position) VALUES(?, ?, ?, ?)";
+
+		jdbcTemplate.update(insertStaff, staff.getStaff_id(), staff.getStaff_name(), staff.getAge(), staff.getPosition());
+		
+		String insertRole = "INSERT INTO Role(staff_id, role_name) VALUES(?, ?)";
+		jdbcTemplate.update(insertRole, staff.getStaff_id(), role.getRole_name());
+	}
+
 }

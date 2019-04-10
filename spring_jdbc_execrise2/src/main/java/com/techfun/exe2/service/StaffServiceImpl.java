@@ -28,4 +28,9 @@ public class StaffServiceImpl implements StaffService {
 		staffRepository.deleteStaff(staff);
 	}
 
+	@Override
+	public void createDuplicateErrorStaffId(Staff staff, Role role) {
+		staffRepository.createDuplicateErrorStaffId(staff, role);
+	}
+
 }

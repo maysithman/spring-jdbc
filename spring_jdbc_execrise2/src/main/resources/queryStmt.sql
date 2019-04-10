@@ -2,8 +2,10 @@
 
 select * from role;
 
-delete from staff;
+insert into staff(staff_id, staff_name, age,
+position) values(14, "Mg Mg", 22, "Junior");
 
+delete from staff;
 
 alter table role drop column "staff_id";
 
@@ -23,3 +25,9 @@ CREATE TABLE role (
 		);
 
 delete from staff where staff_id=8;
+
+SET IDENTITY_INSERT Staff ON
+	insert into MyTable(staff_id, staff_name,
+	age, position) values (1, "MM", 22, "JJ");
+SET IDENTITY_INSERT Staff OFF
+

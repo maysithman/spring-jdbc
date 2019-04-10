@@ -10,5 +10,7 @@ public interface StaffService {
 	Staff updateStaffName(Staff staff);
 	
 	void deleteStaff(Staff staff);
+
+	void createDuplicateErrorStaffId(Staff staff, Role role);
 	
 }

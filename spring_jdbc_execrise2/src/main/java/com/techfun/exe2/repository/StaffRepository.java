@@ -13,4 +13,6 @@ public interface StaffRepository {
 	
 	void deleteStaff(Staff staff);
 
+	void createDuplicateErrorStaffId(Staff staff, Role role);
+
 }
