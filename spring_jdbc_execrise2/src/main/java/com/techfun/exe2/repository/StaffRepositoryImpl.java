@@ -64,8 +64,10 @@ public class StaffRepositoryImpl implements StaffRepository {
 	}
 
 	@Override
+	@Transactional
 	public void deleteStaff(Staff staff) {
 		jdbcTemplate.update("DELETE FROM Staff WHERE Staff_id=?", staff.getStaff_id());
+		jdbcTemplate.update("DELETE FROM Role WHERE Staff_id=?", staff.getStaff_id());
 	}
 
 	@Transactional

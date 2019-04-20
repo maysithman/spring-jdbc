@@ -38,12 +38,15 @@ public class AppStaff
 		}catch(DuplicateKeyException e) {
 			System.out.println("Duplicate staff: you can't insert");
 		}
-		System.out.println("Insert Duplicate New Staff Successfully.");
+		//System.out.println("Insert Duplicate New Staff Successfully.");
 	}
 
 	private static void testDeleteStaff(StaffService staffService) {
 		Staff staff = new Staff();
-		staff.setStaff_id(9);
+		staff.setStaff_id(10);
+		
+		Role role = new Role();
+		role.setStaff_id(10);
 		
 		staffService.deleteStaff(staff);
 		System.out.println("Deleted Staff Successfully.");
